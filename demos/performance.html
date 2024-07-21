@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfomance</title>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <script id="entry-point" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    const perfomanceEntry = performance.getEntriesByName(document.getElementById('entry-point').src)[0]
+
+    if (perfomanceEntry) {
+      const canRecieveTransferSize = Boolean(perfomanceEntry.encodedBodySize)
+
+      printResult(`From cache: ${canRecieveTransferSize ? !perfomanceEntry.transferSize : perfomanceEntry.duration < 20}`)
+    }
+  </script>
+</body>
+
+</html>

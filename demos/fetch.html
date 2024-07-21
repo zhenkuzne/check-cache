@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <script id="entry-point" data-src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    (async () => {
+      const entryPointElement = document.getElementById('entry-point')
+      /** Сафари не хочет брать из кэша без force-cache */
+      const response = await fetch(entryPointElement.dataset.src, {cache: 'force-cache'})
+
+      if (response.ok) {
+        entryPointElement.src = URL.createObjectURL(await response.blob())
+        const expiresHeader = response.headers.get('Expires')
+
+        printResult(`From cache: ${expiresHeader === localStorage.getItem('previousExpiresHeader')}`)
+        localStorage.setItem('previousExpiresHeader', expiresHeader)
+      }
+    })()
+  </script>
+</body>
+</html>

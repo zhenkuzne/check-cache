@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <script id="entry-point" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+    const entryPointSrc = document.getElementById('entry-point').src
+
+    printResult(`From cache: ${entryPointSrc === localStorage.getItem('previousEntryPointSrc')}`)
+    localStorage.setItem('previousEntryPointSrc', entryPointSrc)
+  </script>
+</body>
+</html>
