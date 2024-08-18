@@ -1,11 +1,11 @@
 {
   "name": "check-cache",
   "version": "0.1.0",
-  "description": "",
+  "description": "Demos for an article about checking cache in browsers",
   "scripts": {
     "start": "http-server ./demos"
   },
-  "keywords": [],
+  "keywords": ["cache"],
   "author": "Evgenii Kuznetsov <zhenkuzne@gmail.com>",
   "license": "MIT",
   "devDependencies": {

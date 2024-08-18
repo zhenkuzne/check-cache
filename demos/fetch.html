@@ -11,7 +11,7 @@
   <script>
     (async () => {
       const entryPointElement = document.getElementById('entry-point')
-      /** Сафари не хочет брать из кэша без force-cache */
+      /** Safari does not get from cache without force-cache */
       const response = await fetch(entryPointElement.dataset.src, {cache: 'force-cache'})
 
       if (response.ok) {
