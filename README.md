@@ -2,4 +2,4 @@
 
 [See demos](https://zhenkuzne.github.io/check-cache/)
 
-Go to the article / Перейти к статье
+[Перейти к статье](https://habr.com/ru/articles/837038/)
